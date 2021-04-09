@@ -1,0 +1,120 @@
+{% extends "header.html" %}
+
+{% block title %}Research contributions{% endblock %}
+
+{% block body %}
+
+<div class="research_adin">
+    {% csrf_token %}
+    <h4>Research contributions(calendar year:2019,2020):</h4>
+    <div class="textbox-dropdown">
+        <label for="calendar_year">calendar year:</label>
+        <select name="calendar_year" id="calendar_year" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+        </select>
+    </div>
+    <div class="textbox">
+        <select name="type" id="type" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            <option value="SCI">SCI</option>
+            <option value="Scopers(unpaid)">Scopers(unpaid)</option>
+            <option value="Scopers(paid)">Scopers(paid)</option>
+            <option value="others">Others</option>
+        </select>
+        <input type="text" id="others" name="others" value="" placeholder="if others mension here">
+    </div>
+    <div class="textbox">
+        <label for="title_of_the_paper">Name of the Journal:</label>
+        <input type="text" id="title_of_the_paper" name="title_of_the_paper" value="">
+    </div>
+    <div class="textbox">
+        <label for="volume">Volume:</label>
+        <input type="text" id="volume" name="volume" value="">
+    </div>
+    <div class="textbox">
+        <label for="issue_number">Issue number:</label>
+        <input type="text" id="issue_number" name="issue_number" value="">
+    </div>
+    <div class="textbox">
+        <label for="page_numbers">Page numbers(from-to):</label>
+        <input type="text" id="page_numbers" name="page_numbers" value="">
+    </div>
+    <div class="textbox-dropdown">
+        <label for="author_position">Author position:</label>
+        <select name="author_position" id="author_position" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            <option value="01">1</option>
+            <option value="02">2</option>
+            <option value="03">3</option>
+            <option value="04">4</option>
+            <option value="05">5</option>
+            <option value="06">6</option>
+            <option value="07">7</option>
+            <option value="08">8</option>
+            <option value="09">9</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+        <input type="file" name="file" id="file"><br>
+    <button type="button" class="btn btn-outline-primary" onclick="addrow_research();">Add</button><br><br>
+    <table id="table_research" class="table table-bordered table-hover">
+        <thead>
+            <th>Calendar year</th>
+            <th>Type</th>
+            <th>Name of the Journal</th>
+            <th>Volume</th>
+            <th>Issue number</th>
+            <th>Page numbers(from-to)</th>
+            <th>Author position</th>
+            <th>File name</th>
+        </thead>
+    </table>
+    <button type="button" class="btn btn-outline-primary" onclick="deleterow_research();">Remove</button>
+    *Remove button will delete the first row.<br><br>
+    <h4>Administrative involvement:</h4>
+    <div class="textbox">
+        <label for="college_level">(a)College Level(separate by comma):</label>
+        <input type="text" id="college_level" name="college_level" value="">
+    </div>
+    <div class="textbox">
+        <label for="department_level">(b)Department Level(separate by comma):</label>
+        <input type="text" id="department_level" name="department_level" value="">
+    </div>
+    <div class="textbox">
+        <label for="university_level">(c)University Level(separate by comma):</label>
+        <input type="text" id="university_level" name="university_level" value="">
+    </div>
+    <div class="textbox">
+        <label for="any_other_organization">(d)Any other Organization(separate by comma):</label>
+        <input type="text" id="any_other_organization" name="any_other_organization" value="">
+    </div>
+    <div class="textbox">
+        <label for="other_contributions">(e)other contributions/achievements(separate by comma):</label>
+        <input type="text" id="other_contributions" name="other_contributions" value="">
+    </div>
+    <h4>Performance Of Counselling Students:</h4>
+    <div class="textbox">
+        <label for="no_of_students_adopted">No. of students adopted:</label>
+        <input type="text" id="no_of_students_adopted" name="no_of_students_adopted" value="">
+    </div>
+    <div class="textbox">
+        <label for="no_of_backlog_subjects_before_counselling">No. of backlog subjects before counselling:</label>
+        <input type="text" id="no_of_backlog_subjects_before_counselling" name="no_of_backlog_subjects_before_counselling" value="">
+    </div>
+    <div class="textbox">
+        <label for="no_of_backlog_subjects_at_the_ending_of_the_year">No. of backlog subjects at the ending of the year:</label>
+        <input type="text" id="no_of_backlog_subjects_at_the_ending_of_the_year" name="no_of_backlog_subjects_at_the_ending_of_the_year" value="">
+    </div>
+    <div class="textbox">
+        <label for="name_one_faculty_in_the_entire_college_who_is_most_competitive">Name one faculty in the entire College who is most competitive:</label>
+        <input type="text" id="name_one_faculty_in_the_entire_college_who_is_most_competitive" name="name_one_faculty_in_the_entire_college_who_is_most_competitive" value="">
+    </div>
+    <div class="textbox">
+        <label for="name_one_faculty_in_the_department_who_is_most_competitive">Name one faculty in the department who is most competitive:</label>
+        <input type="text" id="name_one_faculty_in_the_department_who_is_most_competitive" name="name_one_faculty_in_the_department_who_is_most_competitive" value="">
+    </div>
+</div>
+
+<button type="button" class="btn btn-outline-primary" onclick="save_research_adin();">Save</button><br><br>
+    <a href="knowledge_improvement_programmes_participated_during_the_year" ><button type="button" class="btn btn-outline-primary" id="next_research_adin" disabled>Next</button></a>
+
+{% endblock %}

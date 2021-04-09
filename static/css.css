@@ -1,0 +1,54 @@
+body{
+    font-family: Ubuntu !important;
+}
+
+.textbox{
+    width: 50%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 1px 0;
+    margin: 5px 0;
+    border-bottom: 1px dotted black;
+}
+    
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: black;
+    font-size: 18px;
+    width: 100%;
+    margin: 5px;
+}
+
+.textbox-dropdown{
+    width: 50%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 1px 0;
+    margin: 5px 0;
+}
+
+#department_dropdown{
+    width: 20%;
+}
+
+#designation_dropdown{
+    width: 30%;
+}
+
+#total_experience_years,#total_experience_months,#experience_at_viit_years,#experience_at_viit_months{
+    width: 10%;
+}
+
+#type_of_qualification_dropdown{
+    width:40%;
+}
+
+.special_adminstration_of_qualification_dropdown{
+    width: 40%;
+}
+
+.inside_container{
+    padding-left: 15%;
+}
